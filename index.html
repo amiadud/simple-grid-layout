@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+    .header, .nav, .main, .title, .artitcle1, .artitcle2,.artitcle3, .footer{
+    background-color: beige;
+    padding: 5px;
+    border-radius: 5px;
+    /* border: 1px solid green; */
+}
+    .header{
+        grid-area: header;
+    }
+    .nav{
+        grid-area: nav;
+    }
+    .title{
+        font-size: 30px;
+        padding: 15px;
+        grid-area: title;
+        color: white;
+        background-color: blueviolet;
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+        width: 100%;
+        gap: 5px;
+        grid-area: main;
+        text-align: center;
+    }
+    .artitcle1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        width: 100%;
+        height: 200px;
+        grid-area: artitcle1;       
+        background-color: aqua;
+    }
+    .artitcle2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        background-color: aqua;
+        width: 100%;
+        height: 200px;
+        grid-area: artitcle2;
+    }
+    .artitcle3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 200px;
+        grid-area: artitcle2;
+        background-color: aqua;
+    }
+    .footer{
+        grid-area: footer;
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+
+    
+    .container{
+        display: grid;
+        gap: 10px;
+        grid-template-areas: 
+        "header     header      header      header"
+        "nav        title       title       title"
+        "nav        main         main        main"
+        "footer     footer      footer      footer"
+        ;
+        
+    }
+   
+
+    @media screen and (max-width:576px) {
+        .container{
+            grid-template-areas: 
+        "header     header      header      header"
+        "nav        nav         nav       nav"
+        "title      title       title     title"
+        "main        main         main        main"
+        "footer     footer      footer      footer"
+        ;
+        }
+        .main{
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .artitcle1, .artitcle2, .artitcle3{
+            margin-bottom: 5px;
+        }
+        nav ul{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        nav ul li{
+            list-style: none;
+            background-color: aqua;
+            padding: 10px 5px;
+        }
+        
+    }
+    </style>
+</head>
+<body class="container">
+    <header class="header">
+        <h2>Header</h2>
+    </header>
+    <nav class="nav">
+        <ul>
+            <li>Nav-1</li>
+            <li>Nav-2</li>
+            <li>Nav-3</li>
+            <li>Nav-4</li>
+            <li>Nav-5</li>
+        </ul>
+    </nav>
+    <div class="title">title</div>
+    <main class="main">
+        <div class="artitcle1">
+            <h2>artitcle 1</h2>
+        </div>
+        <div class="artitcle2">
+            <h2>artitcle 1</h2>
+        </div>
+        <div class="artitcle3">
+            <h2>artitcle 1</h2>
+        </div>
+    </main>
+    <footer class="footer">
+        <h3>The Footer</h3>
+    </footer>
+</body>
+</html>
